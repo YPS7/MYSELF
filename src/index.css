@@ -1,15 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Glassmorphism Design System */
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    
+    /* Glassmorphism variables */
+    --glass-background: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(0, 0, 0, 0.08);
+    
+    /* Cursor effect variables */
+    --cursor-x: 50%;
+    --cursor-y: 50%;
+    --hue: 280;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -100,6 +108,74 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    overflow-x: hidden;
   }
+}
+
+/* Glassmorphism Components */
+@layer components {
+  .glass-effect {
+    backdrop-filter: blur(20px);
+    background: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(20px);
+    background: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cursor-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(
+      circle at var(--cursor-x) var(--cursor-y),
+      hsl(var(--hue), 80%, 45%) 0%,
+      hsl(calc(var(--hue) + 60), 70%, 55%) 25%,
+      hsl(calc(var(--hue) + 120), 60%, 65%) 50%,
+      transparent 80%
+    );
+    pointer-events: none;
+    z-index: 1;
+    transition: all 0.1s ease-out;
+    opacity: 0.6;
+  }
+  
+  .avatar-container {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* iOS specific optimizations */
+@supports (padding: max(0px)) {
+  .safe-area {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Smooth scrolling for iOS */
+.chat-container {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
