@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { User, Code, Settings, Mail, Star, Send } from 'lucide-react';
-import CursorEffect from '../components/CursorEffect';
+import FluidCursor from '../components/FluidCursor';
 import ChatInterface from '../components/ChatInterface';
 
 const Index = () => {
@@ -51,7 +51,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
-      <CursorEffect />
+      <FluidCursor />
       
       <div className="relative z-10 container mx-auto px-4 py-8 safe-area">
         {/* Header */}
