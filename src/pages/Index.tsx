@@ -30,11 +30,11 @@ const Index = () => {
       query: "What are Yash's technical skills and expertise?"
     },
     {
-      title: "Fun",
-      description: "Discover interesting things about me beyond coding",
+      title: "Work",
+      description: "Explore my professional experience and career journey",
       icon: Star,
-      route: "/about",
-      query: "Tell me some fun and interesting facts about Yash"
+      route: "/work",
+      query: "Tell me about Yash's work experience and career"
     },
     {
       title: "Contact",

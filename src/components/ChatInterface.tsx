@@ -35,27 +35,30 @@ export default function ChatInterface({ isOpen, onClose, initialQuery }: ChatInt
     
     setMessages(prev => [...prev, userMessage]);
     
-    // Simulate AI response with shorter, more human-like responses
-    setTimeout(() => {
-      const responses = [
-        "Hey! I'm Yash, a full-stack developer who loves building cool stuff with React and Node.js. What would you like to know?",
-        "I work on everything from frontend to backend. Currently into AI integration and modern web tech. What catches your interest?",
-        "I've built some fun projects like a LinkedList visualizer and a media platform. Want to hear about any specific one?",
-        "My tech stack includes React, TypeScript, Node.js, and I'm always learning new things. What tech are you curious about?",
-        "I'm passionate about clean code and solving real problems. Feel free to ask about my projects or experience!",
-        "Always up for a good tech discussion! What would you like to chat about?"
-      ];
+    try {
+      const { generateAIResponse } = await import('../lib/gemini');
+      const aiResponse = await generateAIResponse(messageText);
       
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: responses[Math.floor(Math.random() * responses.length)],
+        content: aiResponse,
         role: 'assistant',
         timestamp: new Date()
       };
       
       setMessages(prev => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error('Chat error:', error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: "Sorry, I'm having trouble connecting right now. You can reach Yash directly at yashpratapsingh1007@gmail.com!",
+        role: 'assistant',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
