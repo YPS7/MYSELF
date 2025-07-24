@@ -27,7 +27,7 @@ const Skills = () => {
     {
       title: "AI & Modern Tech",
       icon: "🧠",
-      skills: ["tensorflow", "pytorch", "prisma", "graphql", "firebase", "supabase"]
+      skills: ["tensorflow", "pytorch", "graphql", "firebase", "supabase", "RAG", "LangChain", "LLM"]
     }
   ];
 
