@@ -11,7 +11,7 @@ const About = () => {
   const aboutSections = [
     {
       title: "Who I Am",
-      content: "Hey there! I'm Yash, a passionate software developer who loves creating digital experiences that make a difference. I'm driven by curiosity and the endless possibilities that code can unlock."
+      content: "I’m Yash the guy who turns ideas into running code before your coffee even cools. Got a concept? I’ll have it running by breakfast, prototyped by lunch, and deployed to production by evening snacks. You’ll be enjoying your app while I’m wrapping up my day over dinner. From AI models that think smart to interfaces that feel like magic I don’t just build software, I bring ideas to life. Fast. Clean. Impactful."
     },
     {
       title: "My Journey",
