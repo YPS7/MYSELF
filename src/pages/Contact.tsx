@@ -16,18 +16,18 @@ const Contact = () => {
       link: "mailto:yashpratapsingh1007@gmail.com",
       color: "text-red-500"
     },
-    {
+ {
       platform: "LinkedIn",
       value: "Professional Profile",
       icon: Linkedin,
-      link: "https://linkedin.com/in/yash-pratap-singh",
+      link: "https://www.linkedin.com/in/yashpratapsingh07/",
       color: "text-blue-600"
     },
     {
       platform: "GitHub",
       value: "Code Repository",
       icon: Github,
-      link: "https://github.com/yashpratapsingh1007",
+      link: "https://github.com/YPS7",
       color: "text-gray-800"
     }
   ];
