@@ -47,7 +47,7 @@ export async function generateAIResponse(message: string): Promise<string> {
       return "Hey! I'd love to chat, but my AI brain needs to be connected first. Please set up the Gemini API key to enable our conversation.";
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     
     const chat = model.startChat({
       history: [

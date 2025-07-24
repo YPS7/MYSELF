@@ -42,13 +42,13 @@ const Work = () => {
     {
       title: "Supervised Machine Learning",
       issuer: "Stanford/DeepLearning.AI",
-      link: "#", // User will update later
+      link: "https://coursera.org/share/fb838e1649fb42f81a00d0f3b0713e03", // User will update later
       icon: Award
     },
     {
       title: "Advanced Learning Algorithms", 
       issuer: "Stanford/DeepLearning.AI",
-      link: "#", // User will update later
+      link: "https://coursera.org/share/1312a42e93d672e6f729b9018feefa64", 
       icon: Award
     }
   ];

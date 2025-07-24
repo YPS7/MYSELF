@@ -5,48 +5,54 @@ import CursorEffect from '../components/CursorEffect';
 import ChatInterface from '../components/ChatInterface';
 import { Button } from '../components/ui/button';
 
+// Import all project images (using only existing files from assets)
+import watcherImage from "../assets/watcher-project.png";
+import linkedlistImage from "../assets/linkedlist-project.png";
+import ypsImage from "../assets/ypsmedia.png";
+import reductoImage from "../assets/reducto-project.png";
+
 const projects = [
-    {
-      title: "AI Deep Research Agent",
-      description: " Engineered an AI research assistant using LangChain and Google Gemini solving the need for real‑time, structured research.",
-      image: "/src/assets/watcher-project.png",
-      techStack: ["Python", "LangChain", "Gemini"],
-      githubLink: "https://github.com/YPS7/AI_Research_Agent",
-      liveLink: "https://github.com/YPS7/AI_Research_Agent"
-    },
-    {
-      title: "LinkedList Visualization",
-      description: "Interactive data structure visualization tool for learning linked lists with step-by-step operations",
-      image: "/src/assets/linkedlist-project.png",
-      techStack: ["JavaScript", "HTML5", "CSS3"],
-      githubLink: "https://github.com/YPS7/Linky",
-      liveLink: "https://yps7.github.io/Linky/"
-    },
-    {
-      title: "YPS Media Platform",
-      description: "Video streaming platform with categorized content including music, education, gaming, and podcasts",
-      image: "/src/assets/linkedlist-project.png",
-      techStack: ["React", "Node.js", "MongoDB", "Express"],
-      githubLink: "https://github.com/yash/yps-media",
-      liveLink: "https://yps-media.vercel.app"
-    },
-    {
-      title: "Reducto - Article Summarizer",
-      description: "AI-powered tool that summarizes articles and web content, making information consumption faster and more efficient",
-      image: "/src/assets/prd-generator-project.png",
-      techStack: ["React", "JavaScript", "OpenAI"],
-      githubLink: "https://github.com/YPS7/REDUCTO",
-      liveLink: "https://dashing-jelly-71664c.netlify.app/"
-    },
-    {
-      title: "TheWatcher - Error Monitor",
-      description: "Advanced error monitoring and debugging tool for developers with real-time error tracking and analysis",
-      image: "/src/assets/reducto-project.png",
-      techStack: ["Python", "Batch", "WebSocket"],
-      githubLink: "https://github.com/YPS7/THE-WATCHER",
-      liveLink: "https://thewatchercli.netlify.app/"
-    }
-  ];
+  {
+    title: "AI Deep Research Agent",
+    description: "Engineered an AI research assistant using LangChain and Google Gemini solving the need for real-time, structured research.",
+    image: watcherImage,  // Placeholder; update with a specific image if available
+    techStack: ["Python", "LangChain", "Gemini"],
+    githubLink: "https://github.com/YPS7/AI_Research_Agent",
+    liveLink: "https://github.com/YPS7/AI_Research_Agent"
+  },
+  {
+    title: "LinkedList Visualization",
+    description: "Interactive data structure visualization tool for learning linked lists with step-by-step operations",
+    image: linkedlistImage,
+    techStack: ["JavaScript", "HTML5", "CSS3"],
+    githubLink: "https://github.com/YPS7/Linky",
+    liveLink: "https://yps7.github.io/Linky/"
+  },
+  {
+    title: "YPS Media",
+    description: "Video streaming platform with categorized content including music, education, gaming, and podcasts",
+    image: ypsImage,
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
+    githubLink: "https://capable-taffy-43dd73.netlify.app/",
+    liveLink: "https://capable-taffy-43dd73.netlify.app/"
+  },
+  {
+    title: "Reducto - Article Summarizer",
+    description: "AI-powered tool that summarizes articles and web content, making information consumption faster and more efficient",
+    image: reductoImage,  // Updated to existing file (assumed match for Reducto)
+    techStack: ["React", "JavaScript", "OpenAI"],
+    githubLink: "https://github.com/YPS7/REDUCTO",
+    liveLink: "https://dashing-jelly-71664c.netlify.app/"
+  },
+  {
+    title: "TheWatcher - Error Monitor",
+    description: "Advanced error monitoring and debugging tool for developers with real-time error tracking and analysis",
+    image: watcherImage,
+    techStack: ["Python", "Batch", "WebSocket"],
+    githubLink: "https://github.com/YPS7/THE-WATCHER",
+    liveLink: "https://thewatchercli.netlify.app/"
+  }
+];
 
 const Projects = () => {
   const [showChat, setShowChat] = useState(false);
@@ -91,9 +97,12 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div key={index} className="glass-card p-6 group">
                 <div className="aspect-video bg-gray-200 rounded-lg mb-4 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                    <span className="text-gray-500 text-sm">Project Preview</span>
-                  </div>
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} preview`} 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
                 
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{project.title}</h3>
