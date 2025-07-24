@@ -9,7 +9,7 @@ const projects = [
     {
       title: "AI Deep Research Agent",
       description: " Engineered an AI research assistant using LangChain and Google Gemini solving the need for real‑time, structured research.",
-      image: "/lovable-uploads/e2e4c6ff-7e69-44ef-ab60-d11633b3aad4.png", // Will use placeholder
+      image: "/src/assets/watcher-project.png",
       techStack: ["Python", "LangChain", "Gemini"],
       githubLink: "https://github.com/YPS7/AI_Research_Agent",
       liveLink: "https://github.com/YPS7/AI_Research_Agent"
@@ -17,7 +17,7 @@ const projects = [
     {
       title: "LinkedList Visualization",
       description: "Interactive data structure visualization tool for learning linked lists with step-by-step operations",
-      image: "/lovable-uploads/e2e4c6ff-7e69-44ef-ab60-d11633b3aad4.png", // Will use placeholder
+      image: "/src/assets/linkedlist-project.png",
       techStack: ["JavaScript", "HTML5", "CSS3"],
       githubLink: "https://github.com/YPS7/Linky",
       liveLink: "https://yps7.github.io/Linky/"
@@ -25,7 +25,7 @@ const projects = [
     {
       title: "YPS Media Platform",
       description: "Video streaming platform with categorized content including music, education, gaming, and podcasts",
-      image: "/lovable-uploads/27d107f0-60dc-4c3b-be63-7ada79149a33.png", // Will use placeholder
+      image: "/src/assets/linkedlist-project.png",
       techStack: ["React", "Node.js", "MongoDB", "Express"],
       githubLink: "https://github.com/yash/yps-media",
       liveLink: "https://yps-media.vercel.app"
@@ -33,7 +33,7 @@ const projects = [
     {
       title: "Reducto - Article Summarizer",
       description: "AI-powered tool that summarizes articles and web content, making information consumption faster and more efficient",
-      image: "/lovable-uploads/ce3fcc9f-48ab-49ef-93b6-75805f87c95c.png", // Will use placeholder
+      image: "/src/assets/prd-generator-project.png",
       techStack: ["React", "JavaScript", "OpenAI"],
       githubLink: "https://github.com/YPS7/REDUCTO",
       liveLink: "https://dashing-jelly-71664c.netlify.app/"
@@ -41,12 +41,15 @@ const projects = [
     {
       title: "TheWatcher - Error Monitor",
       description: "Advanced error monitoring and debugging tool for developers with real-time error tracking and analysis",
-      image: "/lovable-uploads/f069ec8c-149d-4a4b-a1b5-b2e153bfb40c.png", // Will use placeholder
+      image: "/src/assets/reducto-project.png",
       techStack: ["Python", "Batch", "WebSocket"],
       githubLink: "https://github.com/YPS7/THE-WATCHER",
       liveLink: "https://thewatchercli.netlify.app/"
     }
   ];
+
+const Projects = () => {
+  const [showChat, setShowChat] = useState(false);
 
   return (
     <div className="min-h-screen relative">

@@ -62,12 +62,29 @@ const Index = () => {
           >
             💼 Looking for a talent?
           </a>
+          <a 
+            href="/src/assets/resume.pdf"
+            download="Yash_Pratap_Singh_Resume.pdf"
+            className="glass-effect px-4 py-2 rounded-full text-sm text-gray-700 hover:bg-white/20 transition-colors"
+          >
+            📄 Download Resume
+          </a>
         </div>
 
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <div className="avatar-container w-24 h-24 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-4xl sm:text-6xl">👨‍💻</span>
+          <div className="avatar-container w-24 h-24 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden">
+            <img 
+              src="/src/assets/profile-placeholder.jpg" 
+              alt="Yash Pratap Singh" 
+              className="w-full h-full object-cover rounded-full"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).style.display = 'none';
+                const nextSibling = e.currentTarget.nextElementSibling as HTMLElement;
+                if (nextSibling) nextSibling.style.display = 'block';
+              }}
+            />
+            <span className="text-4xl sm:text-6xl hidden">👨‍💻</span>
           </div>
           
           <p className="text-lg text-gray-600 mb-2">Hey, I'm Yash 👋</p>
