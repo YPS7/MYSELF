@@ -5,17 +5,22 @@ import CursorEffect from '../components/CursorEffect';
 import ChatInterface from '../components/ChatInterface';
 import { Button } from '../components/ui/button';
 
-const Projects = () => {
-  const [showChat, setShowChat] = useState(false);
-
-  const projects = [
+const projects = [
+    {
+      title: "AI Deep Research Agent",
+      description: " Engineered an AI research assistant using LangChain and Google Gemini solving the need for real‑time, structured research.",
+      image: "/lovable-uploads/e2e4c6ff-7e69-44ef-ab60-d11633b3aad4.png", // Will use placeholder
+      techStack: ["Python", "LangChain", "Gemini"],
+      githubLink: "https://github.com/YPS7/AI_Research_Agent",
+      liveLink: "https://github.com/YPS7/AI_Research_Agent"
+    },
     {
       title: "LinkedList Visualization",
       description: "Interactive data structure visualization tool for learning linked lists with step-by-step operations",
       image: "/lovable-uploads/e2e4c6ff-7e69-44ef-ab60-d11633b3aad4.png", // Will use placeholder
-      techStack: ["JavaScript", "HTML5", "CSS3", "Canvas API"],
-      githubLink: "https://github.com/yash/linkedlist-visualization",
-      liveLink: "https://linkedlist-viz.vercel.app"
+      techStack: ["JavaScript", "HTML5", "CSS3"],
+      githubLink: "https://github.com/YPS7/Linky",
+      liveLink: "https://yps7.github.io/Linky/"
     },
     {
       title: "YPS Media Platform",
@@ -29,17 +34,17 @@ const Projects = () => {
       title: "Reducto - Article Summarizer",
       description: "AI-powered tool that summarizes articles and web content, making information consumption faster and more efficient",
       image: "/lovable-uploads/ce3fcc9f-48ab-49ef-93b6-75805f87c95c.png", // Will use placeholder
-      techStack: ["React", "Python", "Flask", "OpenAI API"],
-      githubLink: "https://github.com/yash/reducto",
-      liveLink: "https://reducto-ai.vercel.app"
+      techStack: ["React", "JavaScript", "OpenAI"],
+      githubLink: "https://github.com/YPS7/REDUCTO",
+      liveLink: "https://dashing-jelly-71664c.netlify.app/"
     },
     {
       title: "TheWatcher - Error Monitor",
       description: "Advanced error monitoring and debugging tool for developers with real-time error tracking and analysis",
       image: "/lovable-uploads/f069ec8c-149d-4a4b-a1b5-b2e153bfb40c.png", // Will use placeholder
-      techStack: ["Node.js", "TypeScript", "WebSocket", "MongoDB"],
-      githubLink: "https://github.com/yash/thewatcher",
-      liveLink: "https://thewatcher-monitor.vercel.app"
+      techStack: ["Python", "Batch", "WebSocket"],
+      githubLink: "https://github.com/YPS7/THE-WATCHER",
+      liveLink: "https://thewatchercli.netlify.app/"
     }
   ];
 
